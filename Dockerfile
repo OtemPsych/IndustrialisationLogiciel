@@ -13,7 +13,9 @@ COPY ./README.md /code/README.md
 
 COPY ./src /code/src
 
+USER root
 RUN pip install /code
+USER nonroot
 
 COPY ./controller /code/controller
 
