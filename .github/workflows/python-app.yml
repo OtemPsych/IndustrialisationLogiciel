@@ -42,7 +42,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Login to registry
-        run: echo ${{ secrets.PERSONAL_TOKEN }} | docker login ghcr.io -u OtemPsych --password-stdin
+        run: |
+        echo ${{ secrets.PERSONAL_TOKEN }}
+        docker login ghcr.io -u OtemPsych --password-stdin
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ghcr.io/OtemPsych/tp2:latest
     - name: Push the image into the registry
