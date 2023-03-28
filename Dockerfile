@@ -1,7 +1,7 @@
 FROM python:3.9
 
-RUN useradd -ms /bin/bash myuser
-USER myuser
+RUN useradd -u 8877 nonroot
+USER nonroot
 
 WORKDIR /code
 
